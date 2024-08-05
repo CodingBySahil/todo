@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTodo } from "../Context/todoContext";
+import { TextField } from "@mui/material";
 
 function TodoForm() {
   const [input, setInput] = useState("");
@@ -16,10 +17,19 @@ function TodoForm() {
 
   return (
     <form onSubmit={handleAdd} className="flex">
-      <input
+      {/* <input
         type="text"
         placeholder="Write Todo..."
         className="w-full border border-black/10 rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      /> */}
+      <TextField
+        id="outlined-basic"
+        label="write your todo task here"
+        variant="outlined"
+        type="text"
+        className="w-full border  rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5"
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
